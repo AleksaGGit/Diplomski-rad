@@ -1,0 +1,56 @@
+﻿@model Biblioteka.Borrowing
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Ponisti iznajmljivanje</h2>
+
+<h3>Da li zelite da ponistite iznajmljivanje?</h3>
+<div>
+    <h4>Informacije o iznajmljivanju</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Book.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status.StatusName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status.StatusName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Izbrisi" class="btn btn-danger" /> |
+            @Html.ActionLink("Lista iznajmljivanja", "Index")
+        </div>
+    }
+</div>

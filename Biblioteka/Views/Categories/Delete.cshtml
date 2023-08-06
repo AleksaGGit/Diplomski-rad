@@ -1,0 +1,32 @@
+﻿@model Biblioteka.Category
+
+@{
+    ViewBag.Title = "Izbrisi kategoriju";
+}
+
+<h2>Izbrisi kategoriju</h2>
+
+<h3>Da li zelite da izbrisete kategoriju?</h3>
+<div>
+    <h4>Kategorija</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Izbrisi" class="btn btn-danger" /> |
+            @Html.ActionLink("Sve kategorije", "Index")
+        </div>
+    }
+</div>
